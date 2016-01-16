@@ -67,7 +67,7 @@ def nye():
     compare = Image.new('RGB', dims)
     compare.paste(im, (0,0))
     compare.paste(bill, (im.size[0], 0))
-    compare.show()
+    return compare
     
 def nyeTwo():
     URL = 'https://raw.githubusercontent.com/lulock/Vision/master/images/bill-nye.png'
@@ -87,7 +87,7 @@ def nyeTwo():
     compare = Image.new('RGB', dims)
     compare.paste(im, (0,0))
     compare.paste(bill, (im.size[0], 0))
-    compare.show()
+    return compare
 
 def fresh():
     URL = 'http://img2.timeinc.net/people/i/2014/sandbox/news/140630/1994/will-smith-600x450.jpg'
@@ -118,7 +118,7 @@ def fresh():
     compare.paste(princesharp, (im.size[0],0))
     compare.paste(prince, (0, im.size[1]))
     compare.paste(princebox, (im.size[0], im.size[1]))
-    compare.show()
+    return compare
     
 def sharpen(n):
     "returns an n by n box filter in the form of a Numpy array. Requires n to be odd."
