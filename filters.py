@@ -47,7 +47,10 @@ def gaussconvolve2d(array,sigma):
     
 def nye():
     #load image
-    im = Image.open('/Users/leilamethnani/Documents/cs425/Assignment2/bill-nye.png')
+    URL = 'http://www.redstate.com/uploads/2015/11/bill-nye2.jpg'
+    file = cStringIO.StringIO(urllib.urlopen(URL).read())
+    im = Image.open(file)
+    im = im.convert('L')
     #convert to grayscale
     im = im.convert('L')
     #resize image
@@ -67,7 +70,7 @@ def nye():
     compare.show()
     
 def nyeTwo():
-    URL = http://www.redstate.com/uploads/2015/11/bill-nye2.jpg
+    URL = 'http://www.redstate.com/uploads/2015/11/bill-nye2.jpg'
     file = cStringIO.StringIO(urllib.urlopen(URL).read())
     im = Image.open(file)
     im = im.convert('L')
@@ -87,7 +90,7 @@ def nyeTwo():
     compare.show()
 
 def fresh():
-    URL = http://img2.timeinc.net/people/i/2014/sandbox/news/140630/1994/will-smith-600x450.jpg
+    URL = 'http://img2.timeinc.net/people/i/2014/sandbox/news/140630/1994/will-smith-600x450.jpg'
     file = cStringIO.StringIO(urllib.urlopen(URL).read())
     firstIm = Image.open(file)
     im = firstIm.convert('L')
