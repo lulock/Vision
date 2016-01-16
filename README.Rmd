@@ -1,0 +1,15 @@
+# Let's have some fun with Python and computer vision :)
+
+Starting by importing some libraries
+```python
+from PIL import Image
+import numpy as np
+import math
+from scipy import signal
+import urllib2, cStringIO
+```
+The first couple of convolutions to discover is with the use of 
+- a boxfilter that blurs by averaging
+- a 2d gaussian filter
+- a sharpening boxfilter
+ 
