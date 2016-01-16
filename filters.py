@@ -93,19 +93,29 @@ def fresh():
     #using 2d gaussian filter
     prince_convolved = gaussconvolve2d(fresh_array, 3)
     prince = Image.fromarray(prince_convolved)
-    if prince.mode != 'RGB':
-        prince = prince.convert('RGB')
+    prince = prince.convert('RGB')
     #prince.show()
     #using box filter
     princebox = signal.convolve2d(fresh_array,boxfilter(19),'same')
     princebox = Image.fromarray(princebox)
-    if princebox.mode != 'RGB':
-        princebox = princebox.convert('RGB')
+    princebox = princebox.convert('RGB')
+    #sharpening box filter
+    princesharp = signal.convolve2d(fresh_array,sharpen(19),'same')
+    princesharp = Image.fromarray(princesharp)
+    princesharp = princesharp.convert('RGB')
     #display images side by side comparing gaussian and box filter at the bottom
     dims = (im.size[0]*2, im.size[1]*2)
     compare = Image.new('RGB', dims)
-    compare.paste(firstIm, (0,0))
-    compare.paste(im, (im.size[0],0))
+    compare.paste(im, (0,0))
+    compare.paste(princesharp, (im.size[0],0))
     compare.paste(prince, (0, im.size[1]))
     compare.paste(princebox, (im.size[0], im.size[1]))
     compare.show()
+    
+def sharpen(n):
+    "returns an n by n box filter in the form of a Numpy array. Requires n to be odd."
+    assert(n%2 != 0), "dimensions must be odd!"
+    filter = np.zeros((n, n))
+    filter[n/2,n/2] = 2
+    filter = filter - boxfilter(n)
+    return filter
