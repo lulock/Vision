@@ -2,7 +2,7 @@ from PIL import Image
 import numpy as np
 import math
 from scipy import signal
-import urllib, cStringIO
+import urllib2, cStringIO
 
 def boxfilter(n):
     "returns an n by n averaging box filter in the form of a Numpy array. Requires n to be odd."
@@ -47,8 +47,8 @@ def gaussconvolve2d(array,sigma):
     
 def nye():
     #load image
-    URL = 'http://www.redstate.com/uploads/2015/11/bill-nye2.jpg'
-    file = cStringIO.StringIO(urllib.urlopen(URL).read())
+    URL = 'https://raw.githubusercontent.com/lulock/Vision/master/images/bill-nye.png'
+    file = cStringIO.StringIO(urllib2.urlopen(URL).read())
     im = Image.open(file)
     im = im.convert('L')
     #convert to grayscale
@@ -70,8 +70,8 @@ def nye():
     compare.show()
     
 def nyeTwo():
-    URL = 'http://www.redstate.com/uploads/2015/11/bill-nye2.jpg'
-    file = cStringIO.StringIO(urllib.urlopen(URL).read())
+    URL = 'https://raw.githubusercontent.com/lulock/Vision/master/images/bill-nye.png'
+    file = cStringIO.StringIO(urllib2.urlopen(URL).read())
     im = Image.open(file)
     im = im.convert('L')
     #im.show()
@@ -91,7 +91,7 @@ def nyeTwo():
 
 def fresh():
     URL = 'http://img2.timeinc.net/people/i/2014/sandbox/news/140630/1994/will-smith-600x450.jpg'
-    file = cStringIO.StringIO(urllib.urlopen(URL).read())
+    file = cStringIO.StringIO(urllib2.urlopen(URL).read())
     firstIm = Image.open(file)
     im = firstIm.convert('L')
     #im.show()
