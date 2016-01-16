@@ -14,15 +14,15 @@ The first couple of convolutions to discover is with the use of
 - a sharpening boxfilter
 
 ###This is our original image:
-![alt text](<p align="center">
-  <img https://raw.githubusercontent.com/lulock/Vision/master/images/fresh.jpg/>
-</p> "Original Fresh Prince Image")
+<p align="center">
+  <img src="https://raw.githubusercontent.com/lulock/Vision/master/images/fresh.jpg/" alt="The Original Fresh Prince"/>
+</p>
 
 ###Now, here's the image in grayscale (top left), sharpened using a boxfilter (top right), blurred with a 2d Gaussian filter (bottom left), and blurred using a boxfilter (bottom right): 
-![alt text][prince]
+![Comparison of applied filters][prince]
 
 ###Bill Nye with Gaussian blur: 
-![alt text][bill]
+![Gaussian blur][bill]
 
 [bill]: https://raw.githubusercontent.com/lulock/Vision/master/images/Output/billBlur.png "Bill Nye Gaussian Blur"
 [prince]: https://raw.githubusercontent.com/lulock/Vision/master/images/Output/prince.png "Fresh Prince Convolutions"
