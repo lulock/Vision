@@ -2,7 +2,6 @@ from PIL import Image
 import numpy as np
 import math
 from scipy import signal
-import urllib2, cStringIO
 
 def MakePyramid(image, minsize):
     '''returns a list including the original PIL image 
