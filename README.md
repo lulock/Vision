@@ -15,7 +15,7 @@ The first couple of convolutions to discover is with the use of
 
 ###This is our original image:
 <p align="center">
-  <img src="https://raw.githubusercontent.com/lulock/Vision/master/images/fresh.jpg" alt="The Original Fresh Prince"/>
+  <img src="https://raw.githubusercontent.com/lulock/Vision/master/filters/images/fresh.jpg" alt="The Original Fresh Prince"/>
 </p>
 
 Now, here's the image in grayscale (top left), **sharpened** using a boxfilter (top right), **blurred** with a **2d Gaussian filter** (bottom left), and **blurred** using a boxfilter (bottom right): 
@@ -24,5 +24,5 @@ Now, here's the image in grayscale (top left), **sharpened** using a boxfilter (
 ###Bill Nye with Gaussian blur: 
 ![Gaussian blur][bill]
 
-[bill]: https://raw.githubusercontent.com/lulock/Vision/master/images/Output/billBlur.png "Bill Nye Gaussian Blur"
-[prince]: https://raw.githubusercontent.com/lulock/Vision/master/images/Output/prince.png "Fresh Prince Convolutions"
+[bill]: https://raw.githubusercontent.com/lulock/Vision/master/filters/images/Output/billBlur.png "Bill Nye Gaussian Blur"
+[prince]: https://raw.githubusercontent.com/lulock/Vision/master/filters/images/Output/prince.png "Fresh Prince Convolutions"
